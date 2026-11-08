@@ -17,6 +17,8 @@ import {
   computeStars,
 } from '../../logic/progressionEngine.js';
 import { KINGDOMS } from '../../data/kingdomsData.js';
+import ActivityHost from '../../components/ActivityHost/ActivityHost.jsx';
+import { hasActivity } from '../../activities/activityRegistry.js';
 import './LevelPage.css';
 
 // ─── Stars display ────────────────────────────────────────────────────────────
