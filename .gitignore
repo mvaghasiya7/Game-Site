@@ -33,3 +33,11 @@ lerna-debug.log*
 .env.test.local
 .env.production.local
 
+# Git bundles
+*.bundle
+
+# Test artifacts and caches
+.vitest
+vitest_results.json
+tests/screenshots
+
