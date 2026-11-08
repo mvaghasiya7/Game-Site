@@ -24,7 +24,7 @@ export const KINGDOMS = [
     subconcept: 'Block Programming',
     subconcept_description:
       'Construct digital logic using block-based programming concepts before diving into HDL code.',
-    pointsToUnlockNext: 150,
+    pointsToUnlockNext: 140,
     levels: [
       {
         id: 'rtl-1',
@@ -43,7 +43,7 @@ export const KINGDOMS = [
         description: 'Learn about signals, registers, and how data flows through a digital design.',
         xpReward: 35,
         starThresholds: [12, 24, 35],
-        pointsRequired: 25,
+        pointsRequired: 20,
         duration: '~8 min',
       },
       {
@@ -53,7 +53,7 @@ export const KINGDOMS = [
         description: 'Explore the key difference between combinational and sequential circuits.',
         xpReward: 40,
         starThresholds: [15, 28, 40],
-        pointsRequired: 55,
+        pointsRequired: 44,
         duration: '~10 min',
       },
       {
@@ -63,7 +63,7 @@ export const KINGDOMS = [
         description: 'Apply your knowledge by constructing a simple block-level circuit diagram.',
         xpReward: 45,
         starThresholds: [18, 32, 45],
-        pointsRequired: 90,
+        pointsRequired: 72,
         duration: '~12 min',
       },
       {
@@ -73,7 +73,7 @@ export const KINGDOMS = [
         description: 'A comprehensive challenge testing everything you have learned in this kingdom.',
         xpReward: 50,
         starThresholds: [20, 38, 50],
-        pointsRequired: 130,
+        pointsRequired: 104,
         duration: '~15 min',
       },
     ],
@@ -93,7 +93,7 @@ export const KINGDOMS = [
     subconcept: 'Mixing & Combining Concepts',
     subconcept_description:
       'Match RTL constructs to their gate-level equivalents and understand the synthesis transformation process.',
-    pointsToUnlockNext: 200,
+    pointsToUnlockNext: 140,
     levels: [
       {
         id: 'syn-1',
@@ -112,7 +112,7 @@ export const KINGDOMS = [
         description: 'Learn how synthesis tools optimize logic to reduce area and improve speed.',
         xpReward: 35,
         starThresholds: [12, 24, 35],
-        pointsRequired: 25,
+        pointsRequired: 20,
         duration: '~8 min',
       },
       {
@@ -122,7 +122,7 @@ export const KINGDOMS = [
         description: 'Discover how generic gates are mapped to a specific technology library.',
         xpReward: 40,
         starThresholds: [15, 28, 40],
-        pointsRequired: 60,
+        pointsRequired: 44,
         duration: '~10 min',
       },
       {
@@ -132,7 +132,7 @@ export const KINGDOMS = [
         description: 'Understand timing constraints and how they guide the synthesis process.',
         xpReward: 45,
         starThresholds: [18, 32, 45],
-        pointsRequired: 95,
+        pointsRequired: 72,
         duration: '~12 min',
       },
       {
@@ -142,7 +142,7 @@ export const KINGDOMS = [
         description: 'A comprehensive synthesis challenge to complete the kingdom.',
         xpReward: 50,
         starThresholds: [20, 38, 50],
-        pointsRequired: 135,
+        pointsRequired: 104,
         duration: '~15 min',
       },
     ],
@@ -162,7 +162,7 @@ export const KINGDOMS = [
     subconcept: 'Floorplan Creation & Organization',
     subconcept_description:
       'Arrange blocks on a canvas, define power rings, and organize the chip floorplan for optimal performance.',
-    pointsToUnlockNext: 200,
+    pointsToUnlockNext: 140,
     levels: [
       {
         id: 'fp-1',
@@ -181,7 +181,7 @@ export const KINGDOMS = [
         description: 'Understand how die dimensions and aspect ratios are determined.',
         xpReward: 35,
         starThresholds: [12, 24, 35],
-        pointsRequired: 25,
+        pointsRequired: 20,
         duration: '~8 min',
       },
       {
@@ -191,7 +191,7 @@ export const KINGDOMS = [
         description: 'Place input/output pads around the die boundary.',
         xpReward: 40,
         starThresholds: [15, 28, 40],
-        pointsRequired: 60,
+        pointsRequired: 44,
         duration: '~10 min',
       },
       {
@@ -201,7 +201,7 @@ export const KINGDOMS = [
         description: 'Position large macro blocks (SRAMs, IPs) strategically on the die.',
         xpReward: 45,
         starThresholds: [18, 32, 45],
-        pointsRequired: 95,
+        pointsRequired: 72,
         duration: '~12 min',
       },
       {
@@ -211,7 +211,7 @@ export const KINGDOMS = [
         description: 'Design a complete floorplan for a sample chip design.',
         xpReward: 50,
         starThresholds: [20, 38, 50],
-        pointsRequired: 135,
+        pointsRequired: 104,
         duration: '~15 min',
       },
     ],
@@ -272,7 +272,7 @@ export const KINGDOMS = [
     subconcept: 'Interactive Placement Sandbox',
     subconcept_description:
       'Use an interactive drag-and-drop sandbox to understand how cells are placed and how placement affects timing.',
-    pointsToUnlockNext: 200,
+    pointsToUnlockNext: 140,
     levels: [
       {
         id: 'pl-1',
@@ -291,7 +291,7 @@ export const KINGDOMS = [
         description: 'Learn the two phases of placement and what each one achieves.',
         xpReward: 35,
         starThresholds: [12, 24, 35],
-        pointsRequired: 25,
+        pointsRequired: 20,
         duration: '~8 min',
       },
       {
@@ -301,7 +301,7 @@ export const KINGDOMS = [
         description: 'Discover how timing constraints guide cell placement decisions.',
         xpReward: 40,
         starThresholds: [15, 28, 40],
-        pointsRequired: 60,
+        pointsRequired: 44,
         duration: '~10 min',
       },
       {
@@ -311,7 +311,7 @@ export const KINGDOMS = [
         description: 'Understand routing congestion and how it relates to placement quality.',
         xpReward: 45,
         starThresholds: [18, 32, 45],
-        pointsRequired: 95,
+        pointsRequired: 72,
         duration: '~12 min',
       },
       {
@@ -321,7 +321,7 @@ export const KINGDOMS = [
         description: 'Optimize a placement scenario and solve timing violations.',
         xpReward: 50,
         starThresholds: [20, 38, 50],
-        pointsRequired: 135,
+        pointsRequired: 104,
         duration: '~15 min',
       },
     ],
@@ -408,7 +408,7 @@ export const KINGDOMS = [
     subconcept: 'Clock Distribution',
     subconcept_description:
       'Trace clock paths, balance clock trees, and understand how skew and latency affect chip timing.',
-    pointsToUnlockNext: 200,
+    pointsToUnlockNext: 140,
     levels: [
       {
         id: 'cts-1',
@@ -427,7 +427,7 @@ export const KINGDOMS = [
         description: 'Understand clock skew, latency, and why minimizing them is essential.',
         xpReward: 35,
         starThresholds: [12, 24, 35],
-        pointsRequired: 25,
+        pointsRequired: 20,
         duration: '~8 min',
       },
       {
@@ -437,7 +437,7 @@ export const KINGDOMS = [
         description: 'Learn how buffers are inserted to distribute the clock signal evenly.',
         xpReward: 40,
         starThresholds: [15, 28, 40],
-        pointsRequired: 60,
+        pointsRequired: 44,
         duration: '~10 min',
       },
       {
@@ -447,7 +447,7 @@ export const KINGDOMS = [
         description: 'Compare different clock tree structures: H-tree, spine, mesh.',
         xpReward: 45,
         starThresholds: [18, 32, 45],
-        pointsRequired: 95,
+        pointsRequired: 72,
         duration: '~12 min',
       },
       {
@@ -457,7 +457,7 @@ export const KINGDOMS = [
         description: 'Balance a clock tree and minimize skew across a full design.',
         xpReward: 50,
         starThresholds: [20, 38, 50],
-        pointsRequired: 135,
+        pointsRequired: 104,
         duration: '~15 min',
       },
     ],
@@ -531,7 +531,7 @@ export const KINGDOMS = [
     subconcept: 'Interconnecting Components',
     subconcept_description:
       'Route signals between cells, manage metal layers, and understand how DRC violations arise during routing.',
-    pointsToUnlockNext: 200,
+    pointsToUnlockNext: 140,
     levels: [
       {
         id: 'rt-1',
@@ -550,7 +550,7 @@ export const KINGDOMS = [
         description: 'Learn about metal layer stacks and routing rules for each layer.',
         xpReward: 35,
         starThresholds: [12, 24, 35],
-        pointsRequired: 25,
+        pointsRequired: 20,
         duration: '~8 min',
       },
       {
@@ -560,7 +560,7 @@ export const KINGDOMS = [
         description: 'Understand how vias connect different metal layers in routing.',
         xpReward: 40,
         starThresholds: [15, 28, 40],
-        pointsRequired: 60,
+        pointsRequired: 44,
         duration: '~10 min',
       },
       {
@@ -570,7 +570,7 @@ export const KINGDOMS = [
         description: 'Explore crosstalk, IR drop, and how routing decisions affect signal quality.',
         xpReward: 45,
         starThresholds: [18, 32, 45],
-        pointsRequired: 95,
+        pointsRequired: 72,
         duration: '~12 min',
       },
       {
@@ -580,7 +580,7 @@ export const KINGDOMS = [
         description: 'Complete a routing scenario while meeting DRC and timing requirements.',
         xpReward: 50,
         starThresholds: [20, 38, 50],
-        pointsRequired: 135,
+        pointsRequired: 104,
         duration: '~15 min',
       },
     ],
@@ -667,7 +667,7 @@ export const KINGDOMS = [
     subconcept: 'Purpose & Placement of Filler Cells',
     subconcept_description:
       'Understand why filler cells are necessary and learn how they are automatically inserted in the design flow.',
-    pointsToUnlockNext: 200,
+    pointsToUnlockNext: 140,
     levels: [
       {
         id: 'fc-1',
@@ -686,7 +686,7 @@ export const KINGDOMS = [
         description: 'Explore decap cells, well-tap cells, and boundary cells.',
         xpReward: 35,
         starThresholds: [12, 24, 35],
-        pointsRequired: 25,
+        pointsRequired: 20,
         duration: '~8 min',
       },
       {
@@ -696,7 +696,7 @@ export const KINGDOMS = [
         description: 'Learn how filler cells ensure N-well regions remain continuous.',
         xpReward: 40,
         starThresholds: [15, 28, 40],
-        pointsRequired: 60,
+        pointsRequired: 44,
         duration: '~10 min',
       },
       {
@@ -706,7 +706,7 @@ export const KINGDOMS = [
         description: 'Place decoupling capacitors strategically to reduce power noise.',
         xpReward: 45,
         starThresholds: [18, 32, 45],
-        pointsRequired: 95,
+        pointsRequired: 72,
         duration: '~12 min',
       },
       {
@@ -716,7 +716,7 @@ export const KINGDOMS = [
         description: 'Complete filler cell insertion for a sample design with DRC checks.',
         xpReward: 50,
         starThresholds: [20, 38, 50],
-        pointsRequired: 135,
+        pointsRequired: 104,
         duration: '~15 min',
       },
     ],
@@ -874,7 +874,7 @@ export const KINGDOMS = [
         description: 'Understand DRC, LVS, and other sign-off checks performed before tape-out.',
         xpReward: 35,
         starThresholds: [12, 24, 35],
-        pointsRequired: 25,
+        pointsRequired: 20,
         duration: '~8 min',
       },
       {
@@ -884,7 +884,7 @@ export const KINGDOMS = [
         description: 'Explore the hierarchical layer structure stored in a GDSII file.',
         xpReward: 40,
         starThresholds: [15, 28, 40],
-        pointsRequired: 60,
+        pointsRequired: 44,
         duration: '~10 min',
       },
       {
@@ -894,7 +894,7 @@ export const KINGDOMS = [
         description: 'Walk through the checklist engineers follow before sending a design to the fab.',
         xpReward: 45,
         starThresholds: [18, 32, 45],
-        pointsRequired: 95,
+        pointsRequired: 72,
         duration: '~12 min',
       },
       {
@@ -902,9 +902,9 @@ export const KINGDOMS = [
         order: 5,
         title: 'GDS Kingdom Challenge',
         description: 'Complete the ultimate ASIC design flow challenge and achieve tape-out!',
-        xpReward: 60,
-        starThresholds: [20, 40, 60],
-        pointsRequired: 135,
+        xpReward: 50,
+        starThresholds: [20, 38, 50],
+        pointsRequired: 104,
         duration: '~20 min',
       },
     ],

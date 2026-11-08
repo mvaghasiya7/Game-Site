@@ -2,18 +2,20 @@
  * PlayerContext.jsx
  * ==================
  * Global React context for player state.
- * Handles loading/saving to localStorage for persistence.
+ * Handles loading/saving to localStorage for persistence with versioned migration.
  * All game state mutations go through this context.
  */
 
-import React, { createContext, useContext, useReducer, useEffect, useCallback } from 'react';
+import React, { createContext, useContext, useReducer, useEffect, useState, useCallback } from 'react';
 import { DEFAULT_PLAYER } from '../data/playerDefaults.js';
 import {
   applyLevelCompletion,
   applySanityCheckCompletion,
 } from '../logic/progressionEngine.js';
-
-const STORAGE_KEY = 'pdplayground_player_v1';
+import {
+  loadAndMigrateStorage,
+  STORAGE_KEY_V2,
+} from '../logic/storageMigration.js';
 
 // ─── Context ────────────────────────────────────────────────────────────────
 const PlayerContext = createContext(null);
@@ -25,6 +27,7 @@ function playerReducer(state, action) {
       return {
         ...DEFAULT_PLAYER,
         ...action.payload,
+        levelProgress: action.payload.levelProgress || {},
         sanityCheckProgress: action.payload.sanityCheckProgress || {},
       };
 
@@ -32,8 +35,8 @@ function playerReducer(state, action) {
       return { ...state, name: action.payload };
 
     case 'COMPLETE_LEVEL': {
-      const { kingdomId, level, score } = action.payload;
-      return applyLevelCompletion(state, kingdomId, level, score);
+      const { kingdomId, level, score, artifacts } = action.payload;
+      return applyLevelCompletion(state, kingdomId, level, score, artifacts);
     }
 
     case 'PASS_SANITY_CHECK': {
@@ -63,31 +66,32 @@ export function PlayerProvider({ children }) {
     ...DEFAULT_PLAYER,
     createdAt: new Date().toISOString(),
   });
+  const [isHydrated, setIsHydrated] = useState(false);
 
-  // Load from localStorage on mount
+  // Load and migrate from localStorage on mount
   useEffect(() => {
     try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) {
-        const saved = JSON.parse(raw);
-        dispatch({ type: 'LOAD_PLAYER', payload: saved });
-      }
+      const initial = loadAndMigrateStorage();
+      dispatch({ type: 'LOAD_PLAYER', payload: initial });
     } catch (e) {
       console.warn('Failed to load player progress:', e);
+    } finally {
+      setIsHydrated(true);
     }
   }, []);
 
-  // Save to localStorage whenever player changes
+  // Save to localStorage ONLY AFTER initial hydration completes (prevents overwriting saved data)
   useEffect(() => {
+    if (!isHydrated) return;
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(player));
+      localStorage.setItem(STORAGE_KEY_V2, JSON.stringify(player));
     } catch (e) {
       console.warn('Failed to save player progress:', e);
     }
-  }, [player]);
+  }, [player, isHydrated]);
 
-  const completeLevel = useCallback((kingdomId, level, score) => {
-    dispatch({ type: 'COMPLETE_LEVEL', payload: { kingdomId, level, score } });
+  const completeLevel = useCallback((kingdomId, level, score, artifacts = {}) => {
+    dispatch({ type: 'COMPLETE_LEVEL', payload: { kingdomId, level, score, artifacts } });
   }, []);
 
   const passSanityCheck = useCallback((kingdomId, check, score = 25) => {
@@ -110,6 +114,7 @@ export function PlayerProvider({ children }) {
         passSanityCheck,
         resetProgress,
         setPlayerName,
+        isHydrated,
       }}
     >
       {children}
@@ -120,6 +125,6 @@ export function PlayerProvider({ children }) {
 // ─── Hook ───────────────────────────────────────────────────────────────────
 export function usePlayer() {
   const ctx = useContext(PlayerContext);
-  if (!ctx) throw new Error('usePlayer must be used inside PlayerProvider');
+  if (!ctx) throw new Error('usePlayer must be used within a PlayerProvider');
   return ctx;
 }

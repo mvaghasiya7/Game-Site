@@ -53,28 +53,28 @@ export const ACHIEVEMENTS = [
     name: 'RTL Master',
     emoji: '🧩',
     description: 'Complete the RTL Understanding Kingdom.',
-    condition: (player) => player.kingdomProgress['rtl-understanding']?.completed,
+    condition: (player) => Boolean(player.kingdomProgress?.['rtl-understanding']?.completed),
   },
   {
     id: 'synthesizer',
     name: 'Synthesizer',
     emoji: '⚗️',
     description: 'Complete the Synthesis Kingdom.',
-    condition: (player) => player.kingdomProgress['synthesis']?.completed,
+    condition: (player) => Boolean(player.kingdomProgress?.['synthesis']?.completed),
   },
   {
     id: 'xp-100',
     name: 'XP Rookie',
     emoji: '⭐',
     description: 'Earn 100 total XP.',
-    condition: (player) => player.totalXP >= 100,
+    condition: (player) => (player.totalXP ?? 0) >= 100,
   },
   {
     id: 'xp-500',
     name: 'XP Hero',
     emoji: '🌟',
     description: 'Earn 500 total XP.',
-    condition: (player) => player.totalXP >= 500,
+    condition: (player) => (player.totalXP ?? 0) >= 500,
   },
   {
     id: 'all-stars',
@@ -89,6 +89,16 @@ export const ACHIEVEMENTS = [
     name: 'Tape-Out!',
     emoji: '💾',
     description: 'Complete the GDS Kingdom — you have finished the ASIC flow!',
-    condition: (player) => player.kingdomProgress['gds']?.completed,
+    condition: (player) => Boolean(player.kingdomProgress?.['gds']?.completed),
+  },
+  {
+    id: 'grandmaster',
+    name: 'Grandmaster',
+    emoji: '👑',
+    description: 'Complete all 8 kingdoms across the entire ASIC design flow.',
+    condition: (player) =>
+      ['rtl-understanding', 'synthesis', 'floorplanning', 'placement', 'cts', 'routing', 'filler-cells', 'gds'].every(
+        (kId) => player.kingdomProgress?.[kId]?.completed
+      ),
   },
 ];
