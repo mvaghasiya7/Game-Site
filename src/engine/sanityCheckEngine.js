@@ -7,9 +7,9 @@ export function evaluateSanityCheck(checkId, context = {}) {
     checkId,
     passed: !isDefect,
     logs: [
-      '[RULE-ENGINE] Initializing Educational Rule Check: ' + checkId,
-      isDefect ? '[RULE-ENGINE] ❌ Violation injected for demonstration.' : '[RULE-ENGINE] ✓ Design rule specifications verified clean.',
-      '[RESULT] Evaluation complete.'
+      `[RULE-ENGINE] Initializing Educational Rule Check: ${checkId}`,
+      isDefect ? `[RULE-ENGINE] ❌ Violation injected for demonstration.` : `[RULE-ENGINE] ✓ Design rule specifications verified clean.`,
+      `[RESULT] Evaluation complete.`
     ],
     metrics: {},
     certificationAllowed: !isDefect,

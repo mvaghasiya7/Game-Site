@@ -26,8 +26,6 @@ export default function Navbar() {
       label: exp.id === 'rtl' ? 'RTL Studio' : exp.id === 'floorplanning' ? 'Floorplan Studio' : 'STA Studio',
       emoji: exp.emoji,
     })),
-
-
   ];
 
   return (

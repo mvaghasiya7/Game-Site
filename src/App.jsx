@@ -59,7 +59,6 @@ export default function App() {
                   <Route path="/explore/studio/sta" element={<STAStudioPage isExploreMode={true} />} />
                   <Route path="/explore/studio/floorplanning" element={<FloorplanStudioPage isExploreMode={true} />} />
                   <Route path="/explore/kingdom/floorplanning/studio" element={<FloorplanStudioPage isExploreMode={true} />} />
-
                   <Route path="/sanity-checks" element={<Navigate to="/world-map" replace />} />
                   <Route path="*" element={<Navigate to="/world-map" replace />} />
                 </Routes>
