@@ -168,3 +168,123 @@
   .world-map__node { display: none; }
   .world-map__spacer { display: none; }
 }
+
+
+/* ===================================================
+   Three-Studio Hub Styles
+   =================================================== */
+
+.three-studios-hub {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.studio-hub-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  padding: 1.75rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.studio-hub-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.studio-hub-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.studio-hub-card__title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.studio-hub-card__emoji {
+  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.studio-hub-card__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 0.2rem 0;
+}
+
+.studio-hub-card__subtitle {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.studio-hub-card__tagline {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.studio-hub-card__highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.5rem 1.25rem;
+  margin-bottom: 1.5rem;
+  padding: 0.85rem 1rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #f1f5f9;
+}
+
+.studio-hub-card__highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #334155;
+}
+
+.studio-hub-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.industrial-flow-banner {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-left: 4px solid #16a34a;
+  border-radius: 8px;
+  padding: 1.1rem 1.4rem;
+  margin: 2rem auto;
+  max-width: 960px;
+  color: #166534;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.maintainer-mode-toggle {
+  text-align: center;
+  margin-top: 2.5rem;
+}
