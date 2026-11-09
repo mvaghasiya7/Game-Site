@@ -1,5 +1,5 @@
 /**
- * sanityCheckEngine.js — Scoped for Floorplanning Kingdom
+ * sanityCheckEngine.js — Three-Studio Scope
  */
 export function evaluateSanityCheck(checkId, context = {}) {
   const isDefect = Boolean(context.injectDefect);

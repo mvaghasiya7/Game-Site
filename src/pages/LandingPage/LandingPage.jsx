@@ -3,12 +3,16 @@
  * ================
  * Welcome / entry point of PD Playground.
  * Shows the platform introduction and Start Learning CTA.
- * On first visit, prompts for player name.
+ * Features our three flagship engineering experiences:
+ *   1. Complete RTL Logic Playground
+ *   2. Deep Floorplanning Kingdom & CAD Studio 3.0 (36 Lessons)
+ *   3. Complete Static Timing Analysis (STA) Laboratory
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { usePlayer } from '../../context/PlayerContext.jsx';
+import { FEATURED_EXPERIENCES } from '../../config/featureScope.js';
 import './LandingPage.css';
 
 // Decorative star positions (static so they don't re-randomize)
@@ -20,37 +24,31 @@ const STARS = Array.from({ length: 60 }, (_, i) => ({
   delay: `${(i * 0.37) % 3}s`,
 }));
 
-const FLOW_ITEMS = [
-  { emoji: '🧩', label: 'RTL' },
-  { emoji: '⚗️', label: 'Synthesis' },
-  { emoji: '🗺️', label: 'Floorplan' },
-  { emoji: '📌', label: 'Placement' },
-  { emoji: '🕐', label: 'CTS' },
-  { emoji: '🔗', label: 'Routing' },
-  { emoji: '🧱', label: 'Filler' },
-  { emoji: '💾', label: 'GDS' },
-];
+const THREE_STUDIOS = FEATURED_EXPERIENCES.map((exp) => ({
+  emoji: exp.emoji,
+  label: exp.title,
+}));
 
 const FEATURES = [
   {
-    emoji: '🗺️',
-    title: 'Epic World Map',
-    desc: 'Navigate through 8 ASIC kingdoms on a visual adventure map.',
+    emoji: '🏛️',
+    title: 'Three Deep EDA Studios',
+    desc: 'Master RTL digital logic, interactive floorplan CAD layout, and static timing analysis.',
   },
   {
-    emoji: '🏆',
-    title: 'Level Progression',
-    desc: 'Unlock levels and kingdoms by earning XP and completing challenges.',
+    emoji: '📐',
+    title: '36-Lesson Floorplan Curriculum',
+    desc: 'From core aspect ratio to multi-macro SoC educational signoff with genuine CAD project grading.',
   },
   {
-    emoji: '⭐',
-    title: 'Stars & Achievements',
-    desc: 'Earn stars on every level and collect unique achievement badges.',
+    emoji: '⚡',
+    title: 'Nodal PDN MNA Solver',
+    desc: 'Linear conductance matrix solution G · V = I for authentic static IR drop analysis.',
   },
   {
-    emoji: '💾',
-    title: 'Progress Saved',
-    desc: 'Your journey is saved automatically — pick up exactly where you left off.',
+    emoji: '🧭',
+    title: 'Unlocked Explore Mode',
+    desc: 'Freely experiment across all studios and lessons without progression gating or XP locks.',
   },
 ];
 
@@ -61,7 +59,6 @@ export default function LandingPage() {
   const [nameInput, setNameInput] = useState('');
 
   const handleStartLearning = () => {
-    // If player hasn't set a real name, prompt them
     if (player.name === 'Student Explorer') {
       setShowModal(true);
     } else {
@@ -112,42 +109,48 @@ export default function LandingPage() {
       {/* Hero */}
       <section className="landing__hero">
         <div className="landing__badge">
-          🎓 Phase 1 Prototype · ASIC Design Learning Adventure
+          🎓 Three-Studio Focus Edition · Professional ASIC &amp; EDA Learning
         </div>
 
         <span className="landing__logo-emoji">🎮</span>
 
         <h1 className="landing__title">
-          PD{' '}
-          <span className="landing__title-highlight">Playground</span>
+          PD <span className="landing__title-highlight">Playground</span>
         </h1>
 
         <p className="landing__tagline">
-          Master ASIC Digital &amp; Physical Design through an epic gamified
-          learning adventure. Level up from RTL all the way to Tape-Out!
+          Master ASIC Digital &amp; Physical Design through deep, uncompromised EDA studios:
+          author digital logic in the RTL Studio, architect chip floorplans in Floorplanning CAD 3.0,
+          and verify slack in the Static Timing Analysis Laboratory.
         </p>
 
-        {/* ASIC Flow preview */}
+        {/* Featured Studios preview */}
         <div className="landing__flow">
-          {FLOW_ITEMS.map((item, i) => (
+          {THREE_STUDIOS.map((item, i) => (
             <React.Fragment key={item.label}>
               <div className="landing__flow-item">
                 {item.emoji} {item.label}
               </div>
-              {i < FLOW_ITEMS.length - 1 && (
-                <span className="landing__flow-arrow">→</span>
+              {i < THREE_STUDIOS.length - 1 && (
+                <span className="landing__flow-arrow">✦</span>
               )}
             </React.Fragment>
           ))}
         </div>
 
+        {/* Industrial flow notice */}
+        <p style={{ fontSize: '0.8rem', color: '#94a3b8', maxWidth: '640px', margin: '0.8rem auto 1.5rem', lineHeight: '1.4' }}>
+          <em>Industrial Flow Note:</em> In commercial flows, Logic Synthesis transforms RTL into gate netlists prior to Floorplanning.
+          Synthesis, Placement, CTS, Routing, Filler Cells, and GDS are safely archived for subsequent dedicated studio releases.
+        </p>
+
         {/* CTA buttons */}
         <div className="landing__cta">
           <button className="btn btn--primary btn--lg" onClick={handleStartLearning}>
-            🚀 Start Learning
+            🚀 Launch Three-Studio Hub
           </button>
           <button className="btn btn--ghost btn--lg" onClick={handleGuestMode}>
-            👤 Continue as Guest
+            🧭 Explore Sandbox Mode
           </button>
         </div>
 

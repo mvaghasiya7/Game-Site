@@ -1,6 +1,21 @@
 /**
- * activityRegistry.js — Scoped for Floorplanning
+ * activityRegistry.js — Combined Three-Studio (RTL & Floorplanning)
  */
+import React from 'react';
+
+// Kingdom 1: RTL Understanding
+import RTLMuxChallenge from './rtl/RTLMuxChallenge.jsx';
+import { validateMuxChallenge } from './rtl/validators/validateMuxChallenge.js';
+import RTLDFFChallenge from './rtl/RTLDFFChallenge.jsx';
+import { validateDFFChallenge } from './rtl/validators/validateDFFChallenge.js';
+import RTLCombSeqChallenge from './rtl/RTLCombSeqChallenge.jsx';
+import { validateCombSeqChallenge } from './rtl/validators/validateCombSeqChallenge.js';
+import RTLAccumulatorChallenge from './rtl/RTLAccumulatorChallenge.jsx';
+import { validateAccumulatorChallenge } from './rtl/validators/validateAccumulatorChallenge.js';
+import RTLFSMChallenge from './rtl/RTLFSMChallenge.jsx';
+import { validateFSMChallenge } from './rtl/validators/validateFSMChallenge.js';
+
+// Kingdom 3: Floorplanning
 import FPExpandedLessonChallenge from './floorplanning/expanded/FPExpandedLessonChallenge.jsx';
 import { EXPANDED_LESSONS } from './floorplanning/expanded/fpExpandedCurriculumData.js';
 import FPIntroChallenge from './floorplanning/FPIntroChallenge.jsx';
@@ -15,6 +30,44 @@ import FPKingdomChallenge from './floorplanning/FPKingdomChallenge.jsx';
 import { validateFPKingdom } from './floorplanning/validators/validateFPKingdom.js';
 
 export const ACTIVITY_REGISTRY = {
+  // RTL Understanding
+  'rtl-1': {
+    levelId: 'rtl-1',
+    kingdomId: 'rtl-understanding',
+    title: '2:1 Multiplexer — The Core of RTL Dataflow Steering',
+    component: RTLMuxChallenge,
+    validator: validateMuxChallenge,
+  },
+  'rtl-2': {
+    levelId: 'rtl-2',
+    kingdomId: 'rtl-understanding',
+    title: 'D Flip-Flop & Sequential Storage Primitives',
+    component: RTLDFFChallenge,
+    validator: validateDFFChallenge,
+  },
+  'rtl-3': {
+    levelId: 'rtl-3',
+    kingdomId: 'rtl-understanding',
+    title: 'Combinational Logic vs. Sequential Storage',
+    component: RTLCombSeqChallenge,
+    validator: validateCombSeqChallenge,
+  },
+  'rtl-4': {
+    levelId: 'rtl-4',
+    kingdomId: 'rtl-understanding',
+    title: 'Pipelined Accumulator & Arithmetic Datapath',
+    component: RTLAccumulatorChallenge,
+    validator: validateAccumulatorChallenge,
+  },
+  'rtl-5': {
+    levelId: 'rtl-5',
+    kingdomId: 'rtl-understanding',
+    title: 'RTL Kingdom Capstone — 1011 Sequence Detector FSM',
+    component: RTLFSMChallenge,
+    validator: validateFSMChallenge,
+  },
+
+  // Floorplanning Core (FP-1 to FP-5)
   'fp-1': {
     levelId: 'fp-1',
     kingdomId: 'floorplanning',
@@ -52,12 +105,12 @@ export const ACTIVITY_REGISTRY = {
   },
 };
 
-// Register all expanded FP lessons (fp-6 through fp-36)
+// Register Floorplanning 3.0 Expanded Track (FP-6 through FP-36)
 Object.entries(EXPANDED_LESSONS).forEach(([id, lesson]) => {
   ACTIVITY_REGISTRY[id] = {
     levelId: id,
     kingdomId: 'floorplanning',
-    title: `${lesson.title} — ${lesson.moduleTitle}`,
+    title: lesson.title + ' — ' + lesson.moduleTitle,
     component: FPExpandedLessonChallenge,
     validator: lesson.validate,
     maxScore: lesson.xpReward,
