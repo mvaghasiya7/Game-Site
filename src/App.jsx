@@ -14,6 +14,7 @@ import WorldMapPage from './pages/WorldMapPage/WorldMapPage.jsx';
 import KingdomPage from './pages/KingdomPage/KingdomPage.jsx';
 import LevelPage from './pages/LevelPage/LevelPage.jsx';
 import STAStudioPage from './pages/StudioPage/STAStudioPage.jsx';
+import FloorplanStudioPage from './pages/FloorplanStudioPage/FloorplanStudioPage.jsx';
 
 export default function App() {
   return (
@@ -36,6 +37,9 @@ export default function App() {
                   <Route path="/kingdom/:kingdomId/level/:levelId" element={<LevelPage />} />
                   <Route path="/studio/sta" element={<STAStudioPage />} />
                   <Route path="/sta-studio" element={<Navigate to="/studio/sta" replace />} />
+                  <Route path="/studio/floorplanning" element={<FloorplanStudioPage />} />
+                  <Route path="/kingdom/floorplanning/studio" element={<FloorplanStudioPage />} />
+                  <Route path="/floorplan-studio" element={<Navigate to="/studio/floorplanning" replace />} />
                   <Route path="/sanity-checks" element={<Navigate to="/world-map" replace />} />
                   <Route path="*" element={<Navigate to="/world-map" replace />} />
                 </Routes>

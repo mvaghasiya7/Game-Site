@@ -492,6 +492,14 @@
   color: #34d399;
 }
 
+.sanity-terminal__line--red {
+  color: #f87171;
+}
+
+.sanity-terminal__line--cyan {
+  color: #38bdf8;
+}
+
 .sanity-terminal__line--bright-green {
   color: #4ade80;
   font-weight: bold;
@@ -518,4 +526,309 @@
   .kingdom-page__title { font-size: 1.8rem; }
   .kingdom-page__emoji-box { width: 60px; height: 60px; font-size: 2rem; }
   .kingdom-page__sanity-grid { grid-template-columns: 1fr; }
+}
+
+/* External Studio Lab Card */
+.kingdom-external-lab-card {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(124, 58, 237, 0.08));
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: var(--radius-lg, 12px);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.kingdom-external-lab-info h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0284c7;
+  margin: 0 0 0.35rem 0;
+}
+
+.kingdom-external-lab-info p {
+  color: var(--color-text-muted, #64748b);
+  margin: 0;
+  font-size: 0.9rem;
+  max-width: 650px;
+  line-height: 1.45;
+}
+
+/* Collapsible command details for clean sanity cards (Fixes 02 & 06) */
+.sanity-card__command-details {
+  margin: 0.6rem 0;
+  background: #0f172a;
+  border-radius: var(--radius-sm, 6px);
+  padding: 0.35rem 0.6rem;
+  font-size: 0.76rem;
+}
+
+.sanity-card__command-details summary {
+  cursor: pointer;
+  color: #38bdf8;
+  font-weight: 600;
+  outline: none;
+  user-select: none;
+}
+
+.sanity-card__command-full {
+  margin-top: 0.4rem;
+  padding-top: 0.3rem;
+  border-top: 1px solid #334155;
+  color: #94a3b8;
+  font-family: monospace;
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+
+/* Floorplanning 2.0 Module Hierarchy */
+.fp-curriculum-module {
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg, 10px);
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.fp-curriculum-module__header {
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: #f8fafc;
+  border-bottom: 1px solid transparent;
+  user-select: none;
+}
+
+.fp-curriculum-module--open .fp-curriculum-module__header {
+  border-bottom-color: var(--color-border);
+}
+
+.fp-curriculum-module__body {
+  padding: 1rem 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.fp-lesson-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md, 8px);
+  padding: 0.85rem 1rem;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+
+.fp-lesson-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  border-color: #38bdf8;
+}
+
+.fp-lesson-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+
+.fp-lesson-card__id {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #0284c7;
+  background: #e0f2fe;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.fp-lesson-card__title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 0.25rem;
+}
+
+.fp-lesson-card__desc {
+  font-size: 0.8rem;
+  color: #64748b;
+  line-height: 1.4;
+  margin: 0 0 0.75rem;
+  flex: 1;
+}
+
+.fp-lesson-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 0.5rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* ─── Review fix: hero stats card (markup existed, styles did not) ────────── */
+.kingdom-page__stats-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.75rem;
+  align-items: flex-start;
+}
+
+.kingdom-page__stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 96px;
+}
+
+/* ─── Review fix: sanity cards on the Kingdom page ───────────────────────── */
+.kingdom-page__sanity-grid .sanity-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  min-width: 0;
+}
+
+.kingdom-page__sanity-grid .sanity-card__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.6rem;
+}
+
+.kingdom-page__sanity-grid .sanity-card__icon {
+  font-size: 1.4rem;
+  margin: 0;
+  display: inline-block;
+  line-height: 1;
+}
+
+.kingdom-page__sanity-grid .sanity-card__category {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.kingdom-page__sanity-grid [class^='sanity-card__badge-'] {
+  margin-left: auto;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  background: #eef2ff;
+  color: #4338ca;
+  border: 1px solid #c7d2fe;
+}
+
+.kingdom-page__sanity-grid .sanity-card__badge-pass { background: #ecfdf5; color: #047857; border-color: #a7f3d0; }
+.kingdom-page__sanity-grid .sanity-card__badge-practice { background: #f0f9ff; color: #0369a1; border-color: #bae6fd; }
+.kingdom-page__sanity-grid .sanity-card__badge-stale { background: #fffbeb; color: #b45309; border-color: #fde68a; }
+.kingdom-page__sanity-grid .sanity-card__badge-lock { background: #f1f5f9; color: #64748b; border-color: #e2e8f0; }
+
+.kingdom-page__sanity-grid .sanity-card__title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin: 0.15rem 0 0;
+  color: var(--color-text);
+}
+
+.kingdom-page__sanity-grid .sanity-card__full-name {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.kingdom-page__sanity-grid .sanity-card__description {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: #475569;
+}
+
+.kingdom-page__sanity-grid .sanity-card__command-details summary {
+  cursor: pointer;
+  font-size: 0.78rem;
+}
+
+.kingdom-page__sanity-grid .sanity-card__command-details code,
+.kingdom-page__sanity-grid .sanity-card__command-full code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.kingdom-page__sanity-grid .sanity-card__command-full {
+  margin-top: 0.35rem;
+  font-size: 0.75rem;
+}
+
+.kingdom-page__sanity-grid .sanity-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.kingdom-page__sanity-grid .sanity-card__reward {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+
+/* ===================================================
+   Floorplanning 3.0 Curriculum & Capstone Badges
+   =================================================== */
+
+.fp-module-progress-chip {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+.fp-lesson-card--capstone {
+  border: 2px solid #818cf8;
+  background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.08);
+}
+
+.fp-lesson-card--capstone:hover {
+  border-color: #6366f1;
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.15);
+  transform: translateY(-2px);
+}
+
+.fp-capstone-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  background: #ede9fe;
+  color: #6d28d9;
+  border: 1px solid #c4b5fd;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.fp-capstone-badge--gold {
+  background: #fef3c7;
+  color: #b45309;
+  border-color: #fde68a;
 }

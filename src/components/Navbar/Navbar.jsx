@@ -17,6 +17,7 @@ export default function Navbar() {
     { to: '/dashboard', label: 'Dashboard', emoji: '📊' },
     { to: '/world-map', label: 'World Map', emoji: '🏛️' },
     { to: '/studio/sta', label: 'STA Studio', emoji: '⏱️' },
+    { to: '/studio/floorplanning', label: 'Floorplan Studio', emoji: '🗺️' },
   ];
 
   return (
